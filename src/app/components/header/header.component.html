@@ -1,0 +1,16 @@
+  
+ <nav>
+    <a class="logo" routerLink="/" rel="noopener noreferrer">
+     TMDB SITE
+     </a>
+     <button class="navbar-toggler" (click)="toggle()" type="button">
+       <i class="fas fa-bars"></i>
+     </button>
+     
+   
+   <div class="nav-content">
+     <a routerLink="/" (click)="scrollToElement(trending)"> Trending Movies</a>
+     <a routerLink="/" (click)="scrollToElement(Trailers)"> Trailers </a>
+     <a routerLink="/Favourites"> Favourites </a>
+   </div>
+ </nav>

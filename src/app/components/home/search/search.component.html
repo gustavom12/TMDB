@@ -1,0 +1,23 @@
+<div
+  class="Container text-center"
+  style="background-image: url(../../../assets/imgs/fondo1.png)"
+>
+  <h2 class="text-center">Welcome to my TMDB simulation Web Site</h2>
+  <input
+    #input
+    type="search"
+    class="text-center"
+    placeholder="Search any Movie"
+    name=""
+    id=""
+    (keydown)="onKeydownEvent($event)"
+  />
+  <button
+    (click)="goToSearchPage()"
+    type="button"
+     
+    class="btn btn-outline-success my-2 my-sm-0"
+  >
+    Search
+  </button>
+</div>

@@ -1,0 +1,17 @@
+<div class="Container" #Container>
+    <h2 class="title">Upcoming Movies</h2>
+    <div class="pelis">
+      <div #peli class="peli" *ngFor="let peli of pelis">
+        <img routerLink="/movies/{{peli.id}}" src="https://image.tmdb.org/t/p/w500/{{ peli.poster_path }}" />
+          <div #voteAverage  class="vote">
+            <h6 #votePercent>{{ peli.vote_average * 10  }}</h6>
+            <span>%</span>
+          </div>
+        <h5 >{{ peli.title }}</h5>
+        <p>{{ peli.release_date }}</p>
+        
+      </div>
+        <button (click)="getMore20(pelis,upcoming,i)" type="button">➤</button>
+    </div>
+    <hr>
+  </div>

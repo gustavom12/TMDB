@@ -1,0 +1,39 @@
+<div class="input">
+  <input
+    #input
+    type="search"
+    class="text-center"
+    placeholder="Search any Movie "
+    name=""
+    id=""
+    (keydown)="onKeydownEvent($event)"
+  />
+  <button
+    type="button"
+    (click)="goToSearchPage()"
+    class="btn btn-outline-success"
+  >
+    Search
+  </button>
+</div>
+<div class="pelis">
+  <div *ngFor="let peli of pelis" class="peli">
+    <img
+      *ngIf="peli.poster_path !== null"
+      src="https://image.tmdb.org/t/p/w500/{{ peli.poster_path }}"
+      alt=""
+      routerLink="/movies/{{peli.id}}"
+    />
+    <img
+      *ngIf="peli.poster_path === null"
+      src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg"
+      alt=""
+      routerLink="/movies/{{peli.id}}"
+    />
+    <div class="text">
+      <h2>{{ peli.title }}</h2>
+      <h3>{{ peli.release_date }}</h3>
+      <p [ShorterText]="peli.overview" [slice]="150" [end]="'...'">{{ peli.overview }}</p>
+    </div>
+  </div>
+</div>

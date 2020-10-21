@@ -1,0 +1,103 @@
+@import "../../../styles.sass"
+    
+.navbar-toggler
+    font-size: 32px
+    display: none
+
+
+nav
+    width: 100%
+    height: 9vh
+    display: flex
+    flex-direction: row
+    align-items: center
+    background:  $maincolor
+    position: fixed
+    z-index: 100000
+    .logo
+        text-decoration: none
+        color: #ffffff
+        font-weight: 500
+        font-size: 34px
+        margin-left: 20px
+.nav-content
+    margin-left: auto
+    margin-right: 20px
+    display: flex
+    
+    a
+        color: #ffffff
+        font-size: 22px
+        margin-right: 20px
+        cursor: pointer
+    a:hover
+        color: #7991f3
+        transition: all .2s ease-in-out
+        transform: scale(1.1)
+        text-decoration: none
+
+.active
+    display: block 
+    -webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+    animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both
+    padding-bottom: 20px
+
+@media ( max-width: 500px )
+    
+    .nav-content
+        display: none
+    .active
+        position: absolute
+        z-index: 1000
+        display: flex
+        flex-direction: column
+        background: $maincolor
+        top: 9vh
+        width: 100%
+        > a
+            padding-top: 20px
+            margin-left: auto
+            margin-right: auto
+            font-size: 28px
+        form
+            display: flex
+            justify-content: center
+            input
+                width: 60%
+            button
+                width: 20%
+    nav
+        
+        align-items: center
+        a 
+            margin-left: 20px
+            cursor: pointer
+
+        .navbar-toggler
+            display: block
+            margin-left: auto
+            margin-top: 5px
+            color: #ffffff
+
+//LIBRARY ANIMATIONS 
+
+@-webkit-keyframes slide-bottom 
+    0% 
+        -webkit-transform: translateY(-100px)
+        transform: translateY(-100px)
+ 
+    100% 
+        -webkit-transform: translateY(0px)
+        transform: translateY(0px)
+ 
+
+@keyframes slide-bottom 
+    0% 
+        -webkit-transform: translateY(-100px)
+        transform: translateY(-100px)
+ 
+    100% 
+        -webkit-transform: translateY(0px)
+        transform: translateY(0px)
+ 
+

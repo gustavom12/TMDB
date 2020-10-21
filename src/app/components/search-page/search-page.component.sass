@@ -1,0 +1,60 @@
+.input
+    position: relative
+    top: 10vh
+    input
+        width: 100%
+        height: 42px
+        position: relative
+        border-bottom: 1px #727272 solid
+        text-align: left
+        display: flex
+        justify-content: center
+        align-items: center
+    button
+        transition: all 0.5s linear
+        position: absolute 
+        left: 91%
+        top:  1px
+        height: 40px
+    button:hover
+        transition: all 0.5s linear
+        transform: scale(1.1)
+.pelis
+    min-height: 80vh
+    width: 100%
+    display: flex
+    justify-content: center
+    flex-direction: column
+    position: relative
+    top: 9vh
+    margin-bottom: 20vh
+    .peli
+        display: flex
+        margin-left: 10%
+        margin-right: 10%
+        border: 1px solid #a9a9a9 
+        border-radius: 20px
+        padding: 10px 15px
+        box-shadow: 0 2px 8px #0000007e
+        margin-top: 12px
+        .text
+            margin-left: 20px
+        img
+            cursor: pointer
+            height: 141px
+            width: 94px
+            border-top-left-radius: 10px 
+            border-right: 1px solid #dadada
+        h2
+            font-size: 20px
+        h3
+            font-size: 18px
+            color: #646464
+        p
+            font-size: 1em
+        
+
+@media (max-width: 500px)
+    .input
+        button
+            left: 80%

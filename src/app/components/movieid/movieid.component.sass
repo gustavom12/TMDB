@@ -1,0 +1,170 @@
+@import "../../../styles"
+$height: 90vh
+.containermovie
+    position: relative
+    top: 9vh
+
+.isAlreadyFavourite
+    color: #ffee00 !important
+.isNotFavourite
+    color: #ffffff !important
+
+.movieimg
+    //background-position: right -200px top
+    background-size: cover
+    background-repeat: no-repeat
+    position: absolute
+    z-index: 3
+    width: 100%
+    height: $height
+    filter: grayscale(66%) sepia(28%) brightness(30%)
+    -webkit-filter: grayscale(66%) sepia(28%) brightness(30%)
+    -moz-filter: grayscale(66%) sepia(28%) brightness(30%)
+.moviecontent
+    position: relative
+    z-index: 5
+    display: flex
+    color: #ffffff
+    .imghover
+        width: 280px
+        height: 470px
+        background: #00000070
+        position: absolute
+        left: 40px
+        top: 40px
+        font-size: 65px
+        z-index: 5
+        display: flex
+        justify-content: center
+        align-items: center
+        opacity: 0 
+        visibility: hidden
+        transition: opacity 0.3s linear 
+        a
+            text-decoration: none
+            color: #ffffff
+        a:hover
+            text-decoration: none 
+            color: #dddddd
+    img
+        width: 280px
+        height: 470px
+        border-radius: 15px
+        margin: 40px
+        position: relative
+        z-index: 4
+    img:hover ~ .imghover
+        opacity: 1
+        visibility: visible
+        transition: visibility 1s linear, opacity
+    .imghover:hover
+        opacity: 1
+        visibility: visible
+        transition: visibility 1s linear, opacity
+    .text-content
+        margin: 40px
+        text-align: left
+        .circle
+            display: inline-flex
+            justify-content: center
+            align-items: center
+            height: 45px
+            width: 45px
+            background: $maincolor
+            color: #ffffff
+            border-radius: 50%
+            cursor: pointer
+            transition: all 0.3s linear
+        .circle:before
+            font-size: 20px
+        .circle:hover 
+            transition: all 0.3s linear
+            transform: scale(1.1)
+        .circle:hover .circle:before
+            color: #747474
+        .favouritehover
+            background-color: #ffffff
+            color: #000000
+            width: 140px
+            margin-left: auto
+            margin-right: 28%
+            font-size: 16px
+            text-align: center
+            margin-top: 5px
+            visibility: hidden
+            opacity:0
+            transition: visibility 0.3s linear,opacity 0.3s linear
+        .circle:hover ~.favouritehover
+            visibility: visible
+            opacity:1
+            transition: visibility 0.3s linear,opacity 0.3s linear
+
+        .tagline
+            color: #aaaaaa
+            font-size: 22px
+            position: relative
+            top: -30px
+        h2
+            font-size: 40px
+        .date
+            color: #dcdcdcd4
+            font-size: 30px
+            margin-bottom: 20px
+        .genres
+            margin-left: 5px
+            margin-bottom: 20px
+        .homepage
+            margin-left: 25%
+            margin-right: 30px
+            color: #ffffff
+            text-decoration: none
+        .homepage:hover
+            text-decoration: none
+            color: #c7c7c7
+            
+    .overview
+        margin-bottom: 30px
+        position: relative
+        top: -30px
+        h2
+            font-size: 24px
+        p
+            font-size: 18px
+        
+    .vote
+        position: relative
+        //top: 10px
+        background: $maincolor
+        border-radius: 50%
+        width: 60px
+        height: 60px
+        //margin-left: 15%
+        color: #ffffff
+        display: flex
+        justify-content: center
+        align-items: center
+        border: 5px solid #018859
+        h6
+            font-size: 25px
+            position: relative
+            top: 3px
+            right: -3px
+        span
+            position: relative
+            font-size: 14px
+            top: -8px
+            right: -2px
+    .voteContainer
+        margin-top: 15px
+        h3
+            display: inline-block
+            position: relative
+            top: -50px
+            right: -70px
+
+.background2
+    width: 100%
+    height: $height
+    position: relative
+    z-index: 5
+    background-image: linear-gradient(to right, rgba(11.76%, 18.43%, 23.53%, 1.00) 150px, rgba(18.82%, 25.49%, 30.59%, 0.84) 100%)

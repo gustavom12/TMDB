@@ -1,0 +1,23 @@
+<div class="latestContainer">
+  <div class="divimg " style="background-image: url(https://image.tmdb.org/t/p/w500/{{bgimg}});"></div>
+  <div class="backgroundblack"></div>
+      <h2 class="title text-center">Latest movies's trailers</h2>
+      <div class="pelis">
+        <div
+          #peli
+          class="peli"
+          *ngFor="let peli of pelis"
+          [appMovievideo]="peli.id"
+          
+        >
+          <img
+            src="https://image.tmdb.org/t/p/w500/{{ peli.backdrop_path }}"
+            (mouseenter)="passbg(peli.backdrop_path)"
+          />
+          
+          <h5 class="text-center">{{ peli.title }}</h5>
+        </div>
+      </div>
+
+  <hr />
+</div>

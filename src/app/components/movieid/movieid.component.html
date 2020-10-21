@@ -1,0 +1,42 @@
+<div class="containermovie">
+  <div
+    *ngFor="let m of movie"
+    class="movieimg"
+    style="background-image: url(https://image.tmdb.org/t/p/original/{{m.backdrop_path}});"
+  ></div>
+  <div *ngFor="let m of movie" class="moviecontent">
+    <img src="https://image.tmdb.org/t/p/w500/{{ m.poster_path }}" alt="" />
+    <div class="imghover "> <a href="{{m.homepage}}" target="_blank" class="fas fa-play"></a> </div>
+    <div class="text-content">
+      <h2>{{ m.title }}
+      <span class="date">(</span
+      ><span class="date" [ShorterText]="m.release_date" [slice]="4">{{
+        m.release_date
+      }}</span
+      ><span class="date">)</span>
+      </h2>
+      <span>{{ m.release_date }}</span>
+      <span class="genres" *ngFor="let g of m.genres">•{{g.name}}</span>
+      <div class="voteContainer">
+        <div #voteAverage  class="vote">
+          <h6 #votePercent>{{ m.vote_average * 10  }}</h6>
+          <span>%</span>
+        </div>
+        <h3> Vote average </h3>
+      </div>
+      <h3 class="tagline" *ngIf="m.tagline">{{m.tagline}}</h3>
+      <div class="overview">
+        <h2>overview</h2>
+        <p>{{m.overview}}</p>
+      </div>
+
+      <div class="favPlayContainer">
+        <a class="homepage fas fa-play" href="{{m.homepage}}" target="_blank">Movie´s Home-page</a>
+        <div
+        [ngClass]="isAlreadyFavourite ? 'isAlreadyFavourite': 'isNotFavourite'"
+        (click)="SetFavouriteMovie(m)"  class="favourites circle fas fa-star"></div>
+        <div class="favouritehover"> favourites </div>
+      </div>
+  </div>
+  </div>
+</div>
