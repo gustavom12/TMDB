@@ -1,9 +1,6 @@
 import {
   Component,
-  OnInit,
-  Host,
-  ViewChild,
-  ViewChildren,
+  OnInit
 } from '@angular/core';
 import { ServiciounoService } from '../../../servicios/serviciouno.service';
 
