@@ -21,13 +21,11 @@ export class SearchPageComponent implements OnInit {
  
   goToSearchPage(){
     this.pelis = []
-    console.log(this.search)
     this.search  = this.$input.nativeElement.value
     let Url=`https://api.themoviedb.org/3/search/movie?api_key=4bab412957a2b13c2e912eb8e7e3f691&language=en-US&query=${this.search}&page=1&include_adult=false`
     this.router.navigate(["/searchPage",this.search])
     this.getMovies(this.pelis,Url)
-    console.log(this.search)
-    
+    //If results = 0 =
     setTimeout(() => {
       if(this.pelis.length > 0 && document.querySelector("#noresults")){
         document.querySelector("#noresults").innerHTML= ""
@@ -45,7 +43,6 @@ export class SearchPageComponent implements OnInit {
     this.search = this.route.snapshot.paramMap.get("search")
     let Url=`https://api.themoviedb.org/3/search/movie?api_key=4bab412957a2b13c2e912eb8e7e3f691&language=en-US&query=${this.search}&page=1&include_adult=false`
     this.getMovies(this.pelis,Url)
-    console.log(this.pelis,this.search,Url)
     }
 
   onKeydownEvent(e){

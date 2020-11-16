@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewChecked, AfterViewInit, ViewChild, Component, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, ViewChild, Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router"
 @Component({
   selector: 'app-header',
@@ -23,17 +23,4 @@ export class HeaderComponent implements AfterViewChecked {
     this.trending = document.querySelector(".Containerrr")
     this.Trailers = document.querySelector(".latestContainer")
   }
-  @ViewChild("input") $input: any
-  
-  goToSearchPage(){
-    const search  = this.$input.nativeElement.value
-    this.router.navigate(["/searchPage",search])
-  }
-
-  onKeydownEvent(e){
-    if (e.key === "Enter") {
-      this.goToSearchPage()
-  }
-}
-
 }

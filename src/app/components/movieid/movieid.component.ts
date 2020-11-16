@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router, ActivatedRoute} from "@angular/router";
 import {ServiciounoService} from "../../servicios/serviciouno.service"
 import {Movie} from "../../interface/movie-interface"
@@ -11,7 +11,7 @@ import {FavouritesService} from "../../servicios/favourites.service"
 })
 export class MovieidComponent implements OnInit{
   id;
-  movie = []; 
+  movie:Movie[] = []; 
   url;
   isAlreadyFavourite:boolean;
   constructor(private router:Router, private route: ActivatedRoute,
@@ -23,27 +23,21 @@ export class MovieidComponent implements OnInit{
       this.service.getOnlyOne(this.movie, this.url)
     }
 
-  ngOnInit(): void {
-    //localStorage.clear()
-    //console.log("get",localStorage.getItem("favourites"))
-    setTimeout(() => {
-     this.getFavouriteMovie() 
-     
-    }, 500);
-    
-    setTimeout(() => {
-      console.log(this.isAlreadyFavourite)
-    }, 10000);
-
-  }
-
-
   getFavouriteMovie(){
-    this.isAlreadyFavourite = this.favservice.getArray(this.movie[0]).isAlready
+    if (!localStorage.getItem('favourites')) return
+    //This function returns false or true, if it is true, the favourite´s button on the view is yellow
+    //if movie is not already defined, the function calls itself
+    if(!this.movie[0]){ setTimeout(() =>this.getFavouriteMovie(),200);} 
+    else this.isAlreadyFavourite = this.favservice.getArray(this.movie[0]).isAlready
   }
+
+  ngOnInit(): void {
+    this.getFavouriteMovie()
+  }
+
+
 
   SetFavouriteMovie(movie:Movie){
-    //this.favservice.pushArray(movie);
     this.isAlreadyFavourite = this.favservice.pushArray(movie).togglevariable
   }
 }

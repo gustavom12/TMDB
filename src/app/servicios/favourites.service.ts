@@ -8,6 +8,7 @@ export class FavouritesService {
   favourites = [];
   y = 0;
   constructor() {}
+  //PUSH LOCALSTORAGE FAVOURITES ARRAY
   pushArray(movie: Movie) {
     //localStorage.clear()
     let togglevariable;
@@ -40,7 +41,6 @@ export class FavouritesService {
       togglevariable = true;
       return { togglevariable };
     }
-    console.log(togglevariable);
   }
 
   getArray(movie) {

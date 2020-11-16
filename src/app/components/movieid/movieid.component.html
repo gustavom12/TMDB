@@ -4,20 +4,25 @@
     class="movieimg"
     style="background-image: url(https://image.tmdb.org/t/p/original/{{m.backdrop_path}});"
   ></div>
-  <div *ngFor="let m of movie" class="moviecontent">
+  <div *ngFor="let m of movie"
+   class="moviecontent d-flex justify-content-center
+    align-items-center ">
     <img src="https://image.tmdb.org/t/p/w500/{{ m.poster_path }}" alt="" />
-    <div class="imghover "> <a href="{{m.homepage}}" target="_blank" class="fas fa-play"></a> </div>
+    <div class="imghover d-flex justify-content-center
+    align-items-center"> <a href="{{m.homepage}}" target="_blank" class="fas fa-play"></a> </div>
     <div class="text-content">
-      <h2>{{ m.title }}
+      <h2 class="title">{{ m.title }}
       <span class="date">(</span
       ><span class="date" [ShorterText]="m.release_date" [slice]="4">{{
         m.release_date
       }}</span
       ><span class="date">)</span>
       </h2>
-      <span>{{ m.release_date }}</span>
-      <span class="genres" *ngFor="let g of m.genres">•{{g.name}}</span>
-      <div class="voteContainer">
+      <div class="genresdiv">
+        <h6>{{ m.release_date }}</h6>
+        <span class="genres" *ngFor="let g of m.genres">•{{g.name}}</span>
+      </div>
+        <div class="voteContainer">
         <div #voteAverage  class="vote">
           <h6 #votePercent>{{ m.vote_average * 10  }}</h6>
           <span>%</span>
@@ -40,3 +45,7 @@
   </div>
   </div>
 </div>
+
+
+solo arboles piedra
+lobo asus

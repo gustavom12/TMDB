@@ -26,10 +26,29 @@
         transition: all 0.5s linear
         transform: scale(1.1)
 
-
+@media (max-width: 900px)
+    .Container
+        height: calc(300px + 9vh)
+        h2
+            font-size: 35px
+            height: 140px
+            display: flex
+            justify-content: center
+            align-items: center
+        input
+            top: 100px
+        button
+            top: 98px
 
 @media (max-width: 500px)
     .Container
+        height: calc(250px + 9vh)
+        h2
+            font-size: 30px
+            height: 130px
+            display: flex
+            justify-content: center
+            align-items: center
         input
             top: 100px
         button
