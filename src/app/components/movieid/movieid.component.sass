@@ -15,12 +15,14 @@ $height: 98vh
     background-repeat: no-repeat
     position: absolute
     z-index: 3
+    min-height: 84vh
     width: 100%
     height: 100%
     filter: grayscale(66%) sepia(28%) brightness(30%)
     -webkit-filter: grayscale(66%) sepia(28%) brightness(30%)
     -moz-filter: grayscale(66%) sepia(28%) brightness(30%)
 .moviecontent
+    min-height: 84vh
     position: relative
     z-index: 5
     color: #ffffff
@@ -190,7 +192,7 @@ $height: 98vh
             background: #172a33
             position: relative
             top: 19vh
-            padding-bottom: 125px
+            padding-bottom: 105px
             .genresdiv
                 text-align: center
                 font-size: 18px
@@ -202,6 +204,12 @@ $height: 98vh
                 border-bottom: 2px solid #00000040
                 h6
                     display: none
+            .favPlayContainer
+                a
+                    position: relative
+                    top: -32px
+                
+
 
             .title
                 font-size: 29px
