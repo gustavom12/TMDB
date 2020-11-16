@@ -163,14 +163,16 @@ $height: 98vh
     z-index: 5
     background-image: linear-gradient(to right, rgba(11.76%, 18.43%, 23.53%, 1.00) 150px, rgba(18.82%, 25.49%, 30.59%, 0.84) 100%)
 
-@media ( max-width:500px)
-    body
-        background: #172a33
+@media ( max-width:800px)
+    .favouritehover
+        display: none
     .containermovie
         background: #172a33
     .movieimg
         height: 170px
         filter: none
+        background-size: cover
+        width: 100%
     .moviecontent
         .overview
             margin-bottom: 0
@@ -184,6 +186,7 @@ $height: 98vh
             top: 20px
             left: 20px
         .text-content
+            max-width: 100% !important
             background: #172a33
             position: relative
             top: 19vh
@@ -194,19 +197,21 @@ $height: 98vh
                 width: calc(100% + 60px) 
                 position: relative
                 align-self: flex-start
-                left: -40px
+                left: -30px
                 background: #00000020
                 border-bottom: 2px solid #00000040
+                h6
+                    display: none
 
             .title
                 font-size: 29px
                 text-align: center
                 width: calc(100% + 60px)
                 position: relative
-                height: 7vh
+                min-height: 7vh
                 margin: 0
                 background: #00000020
-                left: -40px
+                left: -30px
                 .date
                     font-size: 20px
                     
@@ -222,7 +227,7 @@ $height: 98vh
                     right: -2px
             .circle
                 position: absolute
-                top: -130px
+                top: -20px
                 right: 10px
             .voteContainer
                 margin-top: 15px
@@ -232,3 +237,9 @@ $height: 98vh
                     top: -37px
                     right: -60px
                     font-size: 23px
+
+@media (max-width: 400px)
+    .moviecontent
+        .text-content
+            .genresdiv
+                font-size: 13px

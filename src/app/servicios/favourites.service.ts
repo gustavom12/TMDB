@@ -24,14 +24,8 @@ export class FavouritesService {
     ) {
       //REMOVE MOVIE IF IT IS ALREADY UPLOAD
       let index = this.favourites.indexOf(movie);
-      console.log(
-        'index',
-        this.favourites.indexOf(movie),
-        this.favourites.slice(index, 1)
-      );
       this.favourites.splice(index, 1);
       localStorage.setItem(`favourites`, JSON.stringify(this.favourites));
-      console.log(this.favourites, 'fav');
       togglevariable = false;
       return { togglevariable };
     } else {
@@ -48,13 +42,7 @@ export class FavouritesService {
       return;
     } else {
       let isAlready = false;
-      console.log(movie, 'movie');
       this.favourites = JSON.parse(localStorage.getItem('favourites'));
-
-      console.log(
-        JSON.stringify(this.favourites).includes(JSON.stringify(movie)),
-        'asd2'
-      );
       if (
         JSON.stringify(this.favourites).includes(JSON.stringify(movie)) === true
       ) {
@@ -67,12 +55,8 @@ export class FavouritesService {
   removeMovie(movie:Movie){
     this.favourites = JSON.parse(localStorage.getItem('favourites'));
     let index = this.favourites.indexOf(movie);
-      console.log(
-        this.favourites,"fab1"
-      );
       this.favourites.splice(index, 1);
       localStorage.setItem(`favourites`, JSON.stringify(this.favourites));
-      console.log(this.favourites, 'fav');
   }
 
 }

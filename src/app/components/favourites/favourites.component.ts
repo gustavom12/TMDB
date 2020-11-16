@@ -15,7 +15,6 @@ export class FavouritesComponent implements OnInit {
   movies = JSON.parse(localStorage.getItem("favourites"))
   noneMovie = false;
   ngOnInit(): void {
-    console.log(this.movies)
     if(this.movies.length <= 0 ){ this.noneMovie = true }
   }
 
@@ -26,7 +25,6 @@ export class FavouritesComponent implements OnInit {
   }
 
   removeOnlyOne(movie){
-    console.log(movie)
     this.favservice.removeMovie(movie)
     this.movies = JSON.parse(localStorage.getItem("favourites"))
   }

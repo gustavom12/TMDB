@@ -33,9 +33,7 @@ export class ServiciounoService{
     this.http.get(url).subscribe(
       (res:any)=> (movie.push(res) ),
       (err) => console.log(err),
-      ()=> {console.log(movie)
-      return movie
-      }
+      ()=> {return movie}
     )
 
 }
