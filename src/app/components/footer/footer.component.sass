@@ -5,45 +5,33 @@ footer
     color: #ffffff
     display: flex
     align-items: center
-    justify-content: space-between
+    justify-content: center
     height: 15vh
     position: relative
     z-index: 1000
     top: 0vh
-    h4
-        font-size: 15px
-        float: right
     a
-        text-decoration: none
+        position: absolute
+        background: #e1e1e12a
         color: #ffffff
-        transition: all 0.3s  linear
+        border-radius: 5px
+        padding: 12px
+        font-size: 24px
+        transition: all 0.4s linear
+        font-weight: 600
     a:hover
-        text-decoration: none
-        transition: all 0.3s  linear
-        transform: scale(1.1)
+        background: #00000035
+        transition: all 0.4s linear
+        transform: scale(1.02)
 
-.logo
-    width: 25%
-    color: #00fffb
-    font-size: 30px
-    font-weight: 700
-.me
-    font-size: 18px
-    margin-right: 20px
+    a:hover 
+        text-decoration: none
+    
 
 @media (max-width: 900px)
     footer
         top: 0vh
-        justify-content: space-around
-    .logo
-        display: none
     
 @media (max-width: 560px)
-    .logo
-        display: none
-    a
-        display: none
     footer
         top: 9vh
-        text-align: center
-        justify-content: center
